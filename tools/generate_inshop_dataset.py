@@ -64,4 +64,13 @@ def make_dataset(dir):
 					print(os.path.join(train_root, path_names))
 # 					pass
 
-make_dataset('inshop/fashion_yifang')
+if __name__ == '__main__':
+    import argparse
+
+    parser = argparse.ArgumentParser(description='Process some integers.')
+    parser.add_argument('--dataroot', type=str, default="data", help='data root')
+
+    args = parser.parse_args()
+    
+    make_dataset(args.dataroot)
+
